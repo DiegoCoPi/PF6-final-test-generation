@@ -2,7 +2,6 @@ import json
 import requests
 
 # Fetch dish by number from API
-
 def dish_fetch(num):
     URL = "https://api-colombia.com/api/v1/TypicalDish"
     response = requests.get(URL)
@@ -19,39 +18,21 @@ def dish_fetch(num):
             }
     return {}
 
-
 def main():
-    print("Hello, students!")
-    print("Fetching Colombian typical dishes...")
+    print("Estudiantes, ¡bienvenidos a Colombia!")
+    print("Escojan el plato típico que deseen.\n")
 
     try:
-        num = int(input("Enter the dish ID number: "))
+        num = int(input("Ingrese el número del plato: "))
         info = dish_fetch(num)
         if info:
-            print("Dish Information:")
+            print("\nInformación del plato:")
             for key, value in info.items():
                 print(f"{key.capitalize()}: {value}")
         else:
-            print("Dish not found.")
+            print("Plato no encontrado.")
     except ValueError:
-        print("Please enter a valid number.")
-    print("Hello, students!")
-    print("Fetching Colombian typical dishes...")
+        print("Por favor ingrese un número válido.")
 
-    try:
-        num = int(input("Enter the dish ID number: "))
-        info = dish_fetch(num)
-        if info:
-            print("Dish Information:")
-            for key, value in info.items():
-                print(f"{key.capitalize()}: {value}")
-        else:
-            print("Dish not found.")
-    except ValueError:
-        print("Please enter a valid number.")
-
-def main():
-  print("Hello learners!")
-
-if __name__=="__main__":
-  main()
+if __name__ == "__main__":
+    main()
